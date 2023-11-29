@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <title>priya fitness</title>
+    <head>
+        <link rel="stylesheet" href="fitness.css">
+        <style>
+            /*css reset */
+            body{
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-weight: bold; 
+                color: white;
+                margin: 0px;
+                padding: 0px;
+                background-image:url("gymimg/girl.jpg");
+                background-size: cover;
+                background-size:100% 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+            .left{
+                   /* border:2px solid red;*/
+                    display: inline-block;
+                    position: absolute;
+                left: 60px;
+                top: 20px;
+            }
+            .left img{
+                width:130px;
+              filter: invert(10%);
+            }
+            .left div{
+                text-align: center;
+                line-height: 19px;
+                font-size: 19px;
+            }
+            .mid{
+                display: block;
+                width: 50%;
+                margin:20px  auto;
+                  /*  border:2px solid rgb(43, 23, 129);*/
+            }
+            .right{
+                position: absolute;
+                right: 34px;
+                top: 20px;
+                display: inline-block;
+                   /* border:2px solid rgb(119, 12, 87);*/
+            }
+            .navbar
+            {
+                display: inline-block;
+            }
+            .navbar li{
+                position:sticky;
+                display: inline-block;
+                font-size: 20px;
+            }
+            .navbar li a{
+                color: white;
+                text-decoration: none;
+                padding:34px 14px ;
+            }
+            .navbar li a:hover,.navbar li a.active{
+               text-decoration: underline;  
+               color: rgb(104, 102, 102);
+            }
+            .btn{
+                margin: opx 9px;
+                color:white;
+                background-color: black;
+                padding:4px 14px;
+                border:2px solid grey;
+                border-radius: 10px;
+                font-size:16px;
+                cursor: pointer;
+            }
+            .btn:hover{
+                background-color: rgb(66, 64, 64);
+            }
+            .container{
+                border: 3px solid white;
+                 margin: 82px 15px;
+                 padding: 86px 43px;
+                width: 44%;
+                border-radius: 52px;
+            }
+            .form-group input{
+                    text-align: center;
+                    display: block;
+                    width: 412px;
+                    padding:11px;
+                    border:3px solid black;
+                    margin: 5px auto;
+                    font-size: 21px;
+                    border-radius: 16px;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-weight: bold;
+
+            }
+            .container h1{
+                text-align: center;
+            }
+            .container button{
+                display: block;
+                width:35%;
+                margin: 15px auto;
+            }
+        </style>
+        <body>
+            <!--left box for the logo -->
+            <header class="header">
+                <div class="left">
+                    <img src="gymimg/symbol.jpg"alt="">
+                    <div>Priya Fitness</div>
+                </div>
+                <!--mid for nav bar -->
+                <div class="mid">
+                    <ul class="navbar">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Fitness Centers</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+                <!--right box for buttons-->
+                <div class="right">
+                    <button class="btn">
+                        Call Us Now
+                    </button>
+                    <button class="btn">
+                        Email Us
+                    </button>
+                </div>
+            </header>
+            <div class="container">
+                <h1>Join the best gym of Dehradun now</h1>
+                <form action="noaction.php">
+                    <div class="form-group">
+                        <input type="text" name="" placeholder="Enter your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="" placeholder="Enter your Age">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="" placeholder="Enter your Gender">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="" placeholder="Enter your Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="" placeholder="Enter your Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="" placeholder="Enter your Number">
+                    </div>
+                    <button class="btn">Submit</button>
+                </form>
+            </div>
+        </body>
+    </head>
+</html>
