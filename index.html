@@ -180,31 +180,63 @@
                 font-size: 0.9rem;
             }
 
+            .nav-toggle{
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                opacity: 0;
+                overflow: hidden;
+            }
+
+            .hamburger{
+                display: none;
+                font-size: 26px;
+                line-height: 1;
+                color: white;
+                cursor: pointer;
+                margin-left: auto;
+                padding: 4px 8px;
+            }
+
             @media (max-width: 700px){
                 header.header{
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 12px;
+                    flex-wrap: wrap;
                 }
 
-                .mid{
+                .hamburger{
+                    display: block;
+                }
+
+                .mid,
+                .right{
+                    display: none;
                     width: 100%;
-                    justify-content: flex-start;
                 }
 
                 .navbar{
+                    flex-direction: column;
                     width: 100%;
-                    justify-content: space-between;
+                }
+
+                .navbar li{
+                    width: 100%;
                 }
 
                 .navbar li a{
-                    padding: 8px 10px;
-                    font-size: 14px;
+                    display: block;
+                    text-align: center;
+                    padding: 12px;
                 }
 
                 .right{
-                    width: 100%;
-                    justify-content: flex-start;
+                    flex-direction: column;
+                    gap: 10px;
+                    padding-top: 12px;
+                }
+
+                .nav-toggle:checked ~ .mid,
+                .nav-toggle:checked ~ .right{
+                    display: flex;
                 }
 
                 .container{
@@ -220,6 +252,8 @@
                 <div class="logo-icon">🏋️</div>
                 <div class="brand">Priya Fitness</div>
             </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="hamburger">☰</label>
             <!--mid for nav bar -->
             <div class="mid">
                 <ul class="navbar">
