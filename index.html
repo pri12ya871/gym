@@ -1,160 +1,278 @@
 <!DOCTYPE html>
-<html>
-    <title>priya fitness</title>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Priya Fitness - Join the best gym in Dehradun. Personal training, fitness centers, and more.">
+        <title>Priya Fitness</title>
         <style>
-            /*css reset */
+            * {
+                box-sizing: border-box;
+            }
+
             body{
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                font-weight: bold; 
+                font-family: 'Segoe UI', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                 color: white;
                 margin: 0px;
                 padding: 0px;
-                background-image:url("gymimg/girl.jpg");
-                background-size: cover;
-                background-size:100% 100%;
-                background-repeat: no-repeat;
+                background: linear-gradient(rgba(10,10,15,0.75), rgba(10,10,15,0.85)),
+                            linear-gradient(135deg, #1f1f2e 0%, #3a1f2e 100%);
                 background-attachment: fixed;
+                min-height: 100vh;
             }
+
+            header.header{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 16px 32px;
+                background-color: rgba(15,15,20,0.95);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+                position: sticky;
+                top: 0;
+                z-index: 10;
+            }
+
             .left{
-                   /* border:2px solid red;*/
-                    display: inline-block;
-                    position: absolute;
-                left: 60px;
-                top: 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
             }
-            .left img{
-                width:130px;
-              filter: invert(10%);
+
+            .left .logo-icon{
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background-color: #e63946;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
             }
-            .left div{
-                text-align: center;
-                line-height: 19px;
-                font-size: 19px;
-            }
-            .mid{
-                display: block;
-                width: 50%;
-                margin:20px  auto;
-                  /*  border:2px solid rgb(43, 23, 129);*/
-            }
-            .right{
-                position: absolute;
-                right: 34px;
-                top: 20px;
-                display: inline-block;
-                   /* border:2px solid rgb(119, 12, 87);*/
-            }
-            .navbar
-            {
-                display: inline-block;
-            }
-            .navbar li{
-                position:sticky;
-                display: inline-block;
+
+            .left div.brand{
                 font-size: 20px;
+                font-weight: bold;
+                letter-spacing: 0.5px;
             }
+
+            .mid{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+
+            .navbar{
+                display: flex;
+                gap: 8px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                flex-wrap: wrap;
+            }
+
             .navbar li a{
                 color: white;
                 text-decoration: none;
-                padding:34px 14px ;
+                padding: 10px 16px;
+                border-radius: 6px;
+                font-weight: 600;
+                transition: background-color 0.2s ease-in-out;
             }
-            .navbar li a:hover,.navbar li a.active{
-               text-decoration: underline;  
-               color: rgb(104, 102, 102);
-            }
-            .btn{
-                margin: opx 9px;
-                color:white;
-                background-color: black;
-                padding:4px 14px;
-                border:2px solid grey;
-                border-radius: 10px;
-                font-size:16px;
-                cursor: pointer;
-            }
-            .btn:hover{
-                background-color: rgb(66, 64, 64);
-            }
-            .container{
-                border: 3px solid white;
-                 margin: 82px 15px;
-                 padding: 86px 43px;
-                width: 44%;
-                border-radius: 52px;
-            }
-            .form-group input{
-                    text-align: center;
-                    display: block;
-                    width: 412px;
-                    padding:11px;
-                    border:3px solid black;
-                    margin: 5px auto;
-                    font-size: 21px;
-                    border-radius: 16px;
-                    font-family: Georgia, 'Times New Roman', Times, serif;
-                    font-weight: bold;
 
+            .navbar li a:hover,
+            .navbar li a.active{
+                background-color: #e63946;
             }
+
+            .right{
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .btn{
+                color:white;
+                background-color: #e63946;
+                padding: 10px 18px;
+                border: none;
+                border-radius: 24px;
+                font-size:15px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.2s ease-in-out, transform 0.15s ease-in-out;
+            }
+
+            .btn:hover{
+                background-color: #c92c39;
+                transform: translateY(-1px);
+            }
+
+            .hero{
+                text-align: center;
+                padding: 64px 20px 32px;
+            }
+
+            .hero h1{
+                font-size: clamp(1.8rem, 5vw, 3rem);
+                margin-bottom: 12px;
+            }
+
+            .hero p{
+                font-size: 1.1rem;
+                color: #ddd;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .container{
+                border: 1px solid rgba(255,255,255,0.25);
+                background-color: rgba(0,0,0,0.35);
+                margin: 40px auto;
+                padding: 40px;
+                width: min(500px, 90%);
+                border-radius: 20px;
+                backdrop-filter: blur(4px);
+            }
+
             .container h1{
                 text-align: center;
+                font-size: 1.6rem;
+                margin-top: 0;
             }
+
+            .form-group{
+                margin-bottom: 14px;
+            }
+
+            .form-group input,
+            .form-group select{
+                text-align: center;
+                display: block;
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 10px;
+                margin: 0 auto;
+                font-size: 16px;
+                font-family: inherit;
+                font-weight: bold;
+                color: #222;
+            }
+
+            .form-group input::placeholder{
+                color: #666;
+                font-weight: normal;
+            }
+
             .container button{
                 display: block;
-                width:35%;
-                margin: 15px auto;
+                width: 60%;
+                margin: 20px auto 0;
+                padding: 12px;
+            }
+
+            footer{
+                text-align: center;
+                padding: 20px;
+                color: #bbb;
+                font-size: 0.9rem;
+            }
+
+            @media (max-width: 700px){
+                header.header{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 12px;
+                }
+
+                .mid{
+                    width: 100%;
+                    justify-content: flex-start;
+                }
+
+                .navbar{
+                    width: 100%;
+                    justify-content: space-between;
+                }
+
+                .navbar li a{
+                    padding: 8px 10px;
+                    font-size: 14px;
+                }
+
+                .right{
+                    width: 100%;
+                    justify-content: flex-start;
+                }
+
+                .container{
+                    padding: 28px 20px;
+                }
             }
         </style>
-        <body>
-            <!--left box for the logo -->
-            <header class="header">
-                <div class="left">
-                    <img src="gymimg/symbol.jpg"alt="">
-                    <div>Priya Fitness</div>
-                </div>
-                <!--mid for nav bar -->
-                <div class="mid">
-                    <ul class="navbar">
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Fitness Centers</a></li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
-                </div>
-                <!--right box for buttons-->
-                <div class="right">
-                    <button class="btn">
-                        Call Us Now
-                    </button>
-                    <button class="btn">
-                        Email Us
-                    </button>
-                </div>
-            </header>
-            <div class="container">
-                <h1>Join the best gym of Dehradun now</h1>
-                <form action="noaction.php">
-                    <div class="form-group">
-                        <input type="text" name="" placeholder="Enter your Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="" placeholder="Enter your Age">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="" placeholder="Enter your Gender">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="" placeholder="Enter your Address">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="" placeholder="Enter your Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="" placeholder="Enter your Number">
-                    </div>
-                    <button class="btn">Submit</button>
-                </form>
-            </div>
-        </body>
     </head>
+    <body>
+        <!--left box for the logo -->
+        <header class="header">
+            <div class="left">
+                <div class="logo-icon">🏋️</div>
+                <div class="brand">Priya Fitness</div>
+            </div>
+            <!--mid for nav bar -->
+            <div class="mid">
+                <ul class="navbar">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Fitness Centers</a></li>
+                    <li><a href="#join">Contact us</a></li>
+                </ul>
+            </div>
+            <!--right box for buttons-->
+            <div class="right">
+                <button class="btn">Call Us Now</button>
+                <button class="btn">Email Us</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Train Hard. Live Strong.</h1>
+            <p>Dehradun's premier fitness center — expert trainers, modern equipment, and a community built to push you further.</p>
+        </section>
+
+        <div class="container" id="join">
+            <h1>Join the best gym of Dehradun now</h1>
+            <form action="noaction.php" method="post">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Enter your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="age" placeholder="Enter your Age" min="1" required>
+                </div>
+                <div class="form-group">
+                    <select name="gender" required>
+                        <option value="" disabled selected>Select your Gender</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="address" placeholder="Enter your Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="number" placeholder="Enter your Number" pattern="[0-9]{10}" required>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+
+        <footer>
+            &copy; 2026 Priya Fitness. All rights reserved.
+        </footer>
+    </body>
 </html>
